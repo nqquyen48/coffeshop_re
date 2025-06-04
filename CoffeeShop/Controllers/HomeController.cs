@@ -1,5 +1,6 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using CoffeeShop.Models;
+using CoffeeShop.Models.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoffeeShop.Controllers
@@ -7,15 +8,18 @@ namespace CoffeeShop.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IProductRepository _repository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IProductRepository repository)
         {
             _logger = logger;
+            _repository = repository;
         }
 
         public IActionResult Index()
         {
-            return RedirectToAction("Shop", "Products");
+            var trendingProducts = _repository.GetAllProducts().Take(1);
+            return View(trendingProducts);
         }
 
         public IActionResult Privacy()
@@ -23,7 +27,6 @@ namespace CoffeeShop.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

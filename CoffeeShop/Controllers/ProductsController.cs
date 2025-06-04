@@ -17,5 +17,15 @@ namespace CoffeeShop.Controllers
             var products = _repository.GetAllProducts();
             return View(products);
         }
+
+        public IActionResult Detail(int id)
+        {
+            var product = _repository.GetProductDetail(id);
+            if (product != null)
+            {
+                return View(product);
+            }
+            return NotFound();
+        }
     }
 }

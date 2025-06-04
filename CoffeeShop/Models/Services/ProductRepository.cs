@@ -14,8 +14,10 @@ namespace CoffeeShop.Models.Services
 
         public IEnumerable<Product> GetAllProducts() => _context.Products;
 
-        public Product GetProductDetail(int id) => _context.Products.FirstOrDefault(p => p.Id == id);
-
+        public Product GetProductDetail(int id)
+        {
+            return _context.Products.FirstOrDefault(p => p.Id == id);
+        }
         public IEnumerable<Product> GetTrendingProducts() => _context.Products.Where(p => p.IsTrendingProduct);
     }
 }

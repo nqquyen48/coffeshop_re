@@ -1,8 +1,28 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<CoffeeShop.Models.Product>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="container mt-5">
+    <h2 class="text-center mb-4">Trending Product</h2>
+    @if (Model.Any())
+    {
+        var item = Model.First();
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="@item.ImageUrl" class="card-img-top" alt="@item.Name" />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">@item.Name</h5>
+                        <p class="card-text text-success">@item.Price.ToString("C")</p>
+                        <a asp-controller="Products" asp-action="Detail" asp-route-id="@item.Id" class="btn btn-primary">
+                            View Detail
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <p class="text-center">No trending products found.</p>
+    }
+</section>
