@@ -1,19 +1,21 @@
-﻿using CoffeeShop.Models.Interfaces;
+﻿using CoffeeShop.Data;
+using CoffeeShop.Models.Interfaces;
 
 namespace CoffeeShop.Models.Services
 {
     public class ProductRepository : IProductRepository
     {
-        private List<Product> products = new List<Product>
+        private readonly CoffeeshopDbContext _context;
+
+        public ProductRepository(CoffeeshopDbContext context)
         {
-            new Product{ Id = 1, Name = "Americano", Price= 25, Detail="Name product", ImageUrl="https://example.com", IsTrendingProduct=true },
-            new Product{ Id = 2, Name = "Vietnamese", Price= 20, Detail="Vietnamese product", ImageUrl="https://example.com", IsTrendingProduct=false },
-        };
+            _context = context;
+        }
 
-        public IEnumerable<Product> GetAllProducts() => products;
+        public IEnumerable<Product> GetAllProducts() => _context.Products;
 
-        public Product GetProductDetail(int id) => products.FirstOrDefault(p => p.Id == id);
+        public Product GetProductDetail(int id) => _context.Products.FirstOrDefault(p => p.Id == id);
 
-        public IEnumerable<Product> GetTrendingProducts() => products.Where(p => p.IsTrendingProduct);
+        public IEnumerable<Product> GetTrendingProducts() => _context.Products.Where(p => p.IsTrendingProduct);
     }
 }
