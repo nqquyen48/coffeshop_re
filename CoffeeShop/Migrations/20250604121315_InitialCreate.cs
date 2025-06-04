@@ -34,9 +34,9 @@ namespace CoffeeShop.Migrations
                 columns: new[] { "Id", "Detail", "ImageUrl", "IsTrendingProduct", "Name", "Price" },
                 values: new object[,]
                 {
-                    { 1, "Cà phê Mỹ", "https://...", true, "Americano", 25m },
-                    { 2, "Cà phê Việt", "https://...", false, "Vietnam", 20m },
-                    { 3, "Cà phê Anh", "https://...", false, "UK", 15m }
+                    { 1, "Cà phê Mỹ", "https://media.istockphoto.com/id/2153935192/vi/anh/cup-of-coffee-isolated-on-white-background-file-contains-clipping-path.jpg?s=612x612&w=0&k=20&c=2KvztiUrbZCfAhdKM93t2Xkzfo_DHadA8CZqkIm-o6E=", true, "Americano", 25m },
+                    { 2, "Cà phê Việt", "https://media.istockphoto.com/id/2153935192/vi/anh/cup-of-coffee-isolated-on-white-background-file-contains-clipping-path.jpg?s=612x612&w=0&k=20&c=2KvztiUrbZCfAhdKM93t2Xkzfo_DHadA8CZqkIm-o6E=", false, "Vietnam", 20m },
+                    { 3, "Cà phê Anh", "https://media.istockphoto.com/id/2153935192/vi/anh/cup-of-coffee-isolated-on-white-background-file-contains-clipping-path.jpg?s=612x612&w=0&k=20&c=2KvztiUrbZCfAhdKM93t2Xkzfo_DHadA8CZqkIm-o6E=", false, "UK", 15m }
                 });
         }
 
