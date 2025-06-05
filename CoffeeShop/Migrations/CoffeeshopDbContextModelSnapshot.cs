@@ -45,7 +45,6 @@ namespace CoffeeShop.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
-                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
@@ -56,17 +55,17 @@ namespace CoffeeShop.Migrations
                         new
                         {
                             Id = 1,
-                            Detail = "Cà phê Mỹ",
-                            ImageUrl = "https://media.istockphoto.com/id/2153935192/vi/anh/cup-of-coffee-isolated-on-white-background-file-contains-clipping-path.jpg?s=612x612&w=0&k=20&c=2KvztiUrbZCfAhdKM93t2Xkzfo_DHadA8CZqkIm-o6E=",
+                            Detail = "Name product",
+                            ImageUrl = "https://insanelygoodrecipes.com/wp-content/uploads/2020/07/Cup-Of-Creamy-Coffee-1024x536.webp",
                             IsTrendingProduct = false,
-                            Name = "Americano",
+                            Name = "America",
                             Price = 25m
                         },
                         new
                         {
                             Id = 2,
-                            Detail = "Cà phê Việt",
-                            ImageUrl = "https://cubes-asia.com/storage/blogs/2024-12/5-cach-pha-ca-phe-sua-tuoi-khong-duong-co.jpeg",
+                            Detail = "Vietnamese product",
+                            ImageUrl = "https://insanelygoodrecipes.com/wp-content/uploads/2020/07/Cup-Of-Creamy-Coffee-1024x536.webp",
                             IsTrendingProduct = false,
                             Name = "Vietnam",
                             Price = 20m
@@ -74,38 +73,38 @@ namespace CoffeeShop.Migrations
                         new
                         {
                             Id = 3,
-                            Detail = "Cà phê Anh",
-                            ImageUrl = "https://cubes-asia.com/storage/blogs/2024-12/5-cach-pha-ca-phe-sua-tuoi-khong-duong-co.jpeg",
+                            Detail = "UK product",
+                            ImageUrl = "https://insanelygoodrecipes.com/wp-content/uploads/2020/07/Cup-Of-Creamy-Coffee-1024x536.webp",
                             IsTrendingProduct = false,
-                            Name = "UK",
+                            Name = "United Kingdom",
                             Price = 15m
                         },
                         new
                         {
                             Id = 4,
-                            Detail = "Cà phê Mỹ",
-                            ImageUrl = "https://media.istockphoto.com/id/2153935192/vi/anh/cup-of-coffee-isolated-on-white-background-file-contains-clipping-path.jpg?s=612x612&w=0&k=20&c=2KvztiUrbZCfAhdKM93t2Xkzfo_DHadA8CZqkIm-o6E=",
+                            Detail = "India product",
+                            ImageUrl = "https://insanelygoodrecipes.com/wp-content/uploads/2020/07/Cup-Of-Creamy-Coffee-1024x536.webp",
                             IsTrendingProduct = false,
-                            Name = "Americano",
-                            Price = 25m
+                            Name = "India",
+                            Price = 15m
                         },
                         new
                         {
                             Id = 5,
-                            Detail = "Cà phê Việt",
-                            ImageUrl = "https://cubes-asia.com/storage/blogs/2024-12/5-cach-pha-ca-phe-sua-tuoi-khong-duong-co.jpeg",
+                            Detail = "Russian product",
+                            ImageUrl = "https://insanelygoodrecipes.com/wp-content/uploads/2020/07/Cup-Of-Creamy-Coffee-1024x536.webp",
                             IsTrendingProduct = false,
-                            Name = "Vietnam",
-                            Price = 20m
+                            Name = "Russian",
+                            Price = 25m
                         },
                         new
                         {
                             Id = 6,
-                            Detail = "Cà phê Anh",
-                            ImageUrl = "https://cubes-asia.com/storage/blogs/2024-12/5-cach-pha-ca-phe-sua-tuoi-khong-duong-co.jpeg",
+                            Detail = "France product",
+                            ImageUrl = "https://insanelygoodrecipes.com/wp-content/uploads/2020/07/Cup-Of-Creamy-Coffee-1024x536.webp",
                             IsTrendingProduct = false,
-                            Name = "UK",
-                            Price = 15m
+                            Name = "France",
+                            Price = 35m
                         });
                 });
 #pragma warning restore 612, 618

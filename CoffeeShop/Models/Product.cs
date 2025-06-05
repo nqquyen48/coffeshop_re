@@ -10,3 +10,4 @@
         public bool IsTrendingProduct { get; set; }
     }
 }
+    

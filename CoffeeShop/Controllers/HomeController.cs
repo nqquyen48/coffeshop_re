@@ -18,7 +18,10 @@ namespace CoffeeShop.Controllers
 
         public IActionResult Index()
         {
-            var trendingProducts = _repository.GetAllProducts().Take(1);
+            var trendingProducts = _repository.GetAllProducts()
+                                              .OrderByDescending(p => p.Id) 
+                                              .Take(4);
+
             return View(trendingProducts);
         }
 
@@ -26,10 +29,18 @@ namespace CoffeeShop.Controllers
         {
             return View();
         }
+        public IActionResult Contact()
+        {
+            return View();
+        }
 
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new ErrorViewModel
+            {
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+            });
         }
     }
 }

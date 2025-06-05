@@ -2,6 +2,7 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <section class="container mt-5">
+    <partial name="_Product" model="Model" />
     <h2 class="text-center mb-4">Our Products</h2>
     <div class="row">
         @foreach (var item in Model)
