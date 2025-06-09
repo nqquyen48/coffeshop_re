@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@inject IHttpContextAccessor HttpContextAccessor
+@{
+    var cartCount = HttpContextAccessor?.HttpContext?.Session.GetInt32("CartCount") ?? 0;
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -9,7 +13,33 @@
     <meta name="description" content="">
 
     <title>@ViewData["Title"] - CoffeeShop</title>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">CoffeeShop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Product" asp-action="Index">Sản phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Đăng nhập</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-controller="ShoppingCart" asp-action="Index" class="nav-link text-dark">
+                            🛒 Giỏ hàng (@cartCount)
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <!-- CSS -->
     <link rel="stylesheet" href="~/assets/web/assets/mobirise-icons2/mobirise2.css">
     <link rel="stylesheet" href="~/assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css">

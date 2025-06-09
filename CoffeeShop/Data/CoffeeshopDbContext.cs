@@ -13,6 +13,7 @@ namespace CoffeeShop.Data
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
 
         // Seed data mẫu (Bước 6 sẽ dùng)
         protected override void OnModelCreating(ModelBuilder modelBuilder)

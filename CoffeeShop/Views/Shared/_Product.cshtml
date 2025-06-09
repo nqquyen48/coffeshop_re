@@ -10,6 +10,9 @@
                 <div class="item-img">
                     <img src="@item.ImageUrl" alt="@item.Name" title="@item.Name" class="img-fluid" />
                 </div>
+                <a asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-pId="@item.Id" class="btn btn-success">
+                    Add to Cart
+                </a>
 
                 <!-- Thông tin sản phẩm -->
                 <div class="item-content text-center mt-3">
